@@ -1,0 +1,97 @@
+
+   
+.mainBox{
+    padding:20px;
+    padding-bottom: 40px;
+   
+}
+ 
+
+.heading{
+    font-size: 4rem;
+    font-weight:  bolder;
+    padding-bottom: 80px;
+    padding-left: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:whitesmoke
+}
+
+.para{
+    font-size:1.5rem;
+    font-weight:normal;
+    font-style: italic;
+    padding-left: 100px;
+    padding-bottom:50px;
+    color: white
+}
+
+.click{
+    background-color:#0f174c;
+    border-radius: 15px ;
+    color: whitesmoke;
+    font-weight:normal;
+    font-size: 20px;
+    margin: 10px;
+    padding:5px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .click:hover {
+    color:lightblue;
+    box-shadow: 0 0.4rem 1.5rem 0 lightblue;
+    transform: translateY(-0.1rem);
+    transition: transform 150ms;
+  }
+
+  .buttons{
+    text-align: right;
+    margin-left: 30px;
+    margin-top: 60px;
+    float: left;
+    width:30%;
+  
+  }
+
+  .link{
+    color: whitesmoke;
+    font-weight:normal;
+    font-size: 20px;
+    margin-left:30px;
+    padding-bottom: 50px;
+  }
+
+  a{
+    font-weight: bolder;
+    color:lightcoral;
+    font-size: 22px;
+  }
+
+  img{
+    width: 200px;
+    height:300px;
+  }
+
+  .carousel{
+   
+    float:right;
+    width:70%;
+    margin-right:40px;
+   
+    
+  }
+
+  .carousel-inner {
+    border-radius: 4px;
+  
+}
+
+  .carousel-control-next,
+  .carousel-control-prev /*, .carousel-indicators */ {
+    filter: invert(100%);
+  }
+
+  .menu{
+    display: flex;
+    justify-content: center;
+  }

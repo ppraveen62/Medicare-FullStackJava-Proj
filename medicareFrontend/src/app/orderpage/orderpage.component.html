@@ -1,0 +1,65 @@
+<div class="mainBox">
+    <div class="header" >
+        <div class="head1">
+            &#9410; Medicare
+        </div>
+        <div class="head2">
+            <div class="profileicon">
+              <a  class="bi bi-house-door-fill" routerLink="/userHome"  id="profile"> Home</a>
+          </div>
+            <div class="carticon">
+                <button  class="bi bi-cart-fill" (click)="opencart()" id="cart"> Cart</button>
+            </div>
+
+            <div class="profileicon">
+                <a class="bi bi-person-fill" id="profile"> {{userName}}</a>
+                <div class="dropdown-options">
+                    <a *ngIf="check" routerLink="/userProfile">Profile</a>
+                    <a *ngIf="check" routerLink="/orders">Orders</a>
+                    <a *ngIf="check" href="#">Logout</a>
+                    <a *ngIf="!check" href="#">Signin</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div>
+            <h4>Your Orders</h4>
+        </div>
+        <div *ngFor="let c of carts">
+            <div *ngIf="c.username==userName && c.payment=='paid'">
+                <div class="box">
+                    <div class="box1">
+                        <div class="cardhead1">
+                            <div class="ch">
+                                <label>Order Placed</label>
+                                <p>{{c.dateofpurchase}}</p>
+                            </div>
+                            <div class="ch">
+                                <label>Price</label>
+                                <p>₹ {{c.totalprice}}</p>
+                            </div>
+                        </div>
+                        <div class="cardhead2">
+                            <div>
+                                <label>Order Id #<i id="order">{{c.orderno}}</i></label>
+                            </div>
+                        </div>
+                        
+                    </div>
+        
+                    <div class="box2">
+                        <div class="product">
+                            <img src="{{c.productimageurl}}" class="image" alt="image">
+                            <h5>{{c.productname}}</h5>
+                        </div>
+                        
+                    </div>
+        
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="btn-group">
+    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Sort by
+    </button>
+    <div class="dropdown-menu dropdown-menu-right">
+      <button class="dropdown-item" type="button" (click)=sortlh()>Low price-High price</button>
+      <button class="dropdown-item" type="button" (click)=sorthl()>High price-Low price</button>
+    </div>
+</div>
+<div class="mainbox">
+    <div *ngFor="let p of products | filter:search">
+        <div *ngIf="p.productAvaliabilty && p.productCategory=='vitamins'"  class="card">
+          <div (click)="show(p.productId)" id='cardlink'>  
+            <img src={{p.productImageUrl}} class="card-img-top" alt="image">
+            <div class="card-title">
+                <h5 class="product-name">{{p.productName}}</h5>
+            </div>
+            <p class="product-price">₹ {{p.productPrice}}</p>
+
+        </div>
+        <button type="button" class="addcart-btn"
+            (click)=addtocart(userName,p.productId,p.productCategory,p.productName,p.productPrice,p.productImageUrl)>Add
+            To Cart</button>
+    </div>
+</div>
+</div>
+

@@ -1,0 +1,69 @@
+.mainbox{
+    padding: 30px;
+ }
+ 
+ .heading{
+     font-size: 2rem;
+     font-weight:  bolder;
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     color:whitesmoke;
+     padding-left:50px;
+     float: left;
+     width:100%;
+     justify-content: left;
+     padding-bottom: 50px;
+ }
+ 
+ .box{
+    margin-top: 100px;
+    text-align: center;
+    padding: 30px;
+    background-color: whitesmoke;
+    height:400px;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 5px;
+ }
+
+
+ .circle{
+    text-align: center;
+    color: gainsboro;
+    font-size:6rem;
+    font-weight: 900;
+    background-color: #067006;
+    padding: 10px;
+    height: auto;
+    width: max-content;
+    border-radius: 60px;
+
+    animation-name: example;
+    animation-duration: 5s;
+    animation-timing-function: ease;
+ }
+
+ .box2{
+    
+    position: absolute;
+    top: 50%;
+    left: 45%;
+
+ }
+
+ .btn{
+    background-color: #5470d0;
+    border:none;
+    border-radius: 5px;
+    color: whitesmoke;
+    margin-top: 17%;
+}
+
+
+
+@keyframes example {
+  from {background-color: #067006;}
+  to {background-color: gainsboro}
+
+  from {color: gainsboro;}
+  to {color: green}
+}

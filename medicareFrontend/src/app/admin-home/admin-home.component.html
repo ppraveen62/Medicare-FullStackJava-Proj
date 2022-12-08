@@ -1,0 +1,131 @@
+
+<div class="mainBox">
+    <div class="head">
+        <h1 class="heading">
+            &#9410; Medicare
+        </h1>
+        <div class="bar">
+        </div>
+        
+
+        <div class="nav">
+
+            <li class="nav-item ">
+            <a class="nav-link active"  (click)="prdouctslist()" id ="product">Products <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" (click)="userslist()" id="user">Users</a>
+            </li>
+            <div class="logdiv">
+                <button  class="log" routerLink="" >logout</button>
+            </div>
+                                                            
+           
+        
+                
+        </div>
+
+        <div class="bar2">
+        </div>
+    </div>
+    
+    <div *ngIf="menuproduct">
+        <div class="addbtn">
+            <button type="button"  class="click" routerLink="/addProduct">Add Product</button>
+        </div >
+           
+        <div class="search">
+            Search for product: 
+            <input type="text" name ="search" class="searchbar" [(ngModel)]="searchText" placeholder="search here">
+        </div>
+    
+        <div class="list">
+            <table class="table">
+                <thead>
+                    <tr id ="tablehead">
+                        <th>Id</th>
+                        <th>Category</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Company</th>
+                        <th style="width:20%">Description</th>
+                        <th>Manfacturer</th>
+                        <th>ImageUrl</th>
+                        <th colspan="3">Operations</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+    
+                    <tr *ngFor="let p of products |filter:searchText">
+                        <td>{{p.productId}}</td>
+                        <td>{{p.productCategory}}</td>
+                        <td>{{p.productName}}</td>
+                        <td>{{p.productPrice}}</td>
+                        <td>{{p.productCompany}}</td>
+                        <td>{{p.productManfacturerDescription}}</td>
+                        <td>{{p.productManfacturer}}</td>
+                        
+                        <td><img class="d-block w-100" src= {{p.productImageUrl}} alt="image"></td>
+                        <td>
+                            <button *ngIf="p.productAvaliabilty" class="enablebtn" (click)="avaliabilty(p.productId)" >&nbsp;Enabled</button>
+                            <button *ngIf="!p.productAvaliabilty" class="disablebtn" (click)="avaliabilty2(p.productId)">Disabled</button>
+                        </td>                    
+                        <td>
+                            <a routerLink="/updateProduct/{{p.productId}}">
+                                <button class="editbtn"><i class="bi bi-pen"></i></button>
+                            </a>
+                        </td>
+                        <td>
+                            <button class="deletebtn" (click)="delete(p.productId)"><i class="bi bi-trash3"></i></button>
+                        </td>
+    
+                    </tr>     
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div *ngIf="menuuser">
+        
+           
+        <div class="search">
+            Search User: 
+            <input type="text" name ="search" class="searchbar" [(ngModel)]="searchText" placeholder="search here">
+        </div>
+    
+        <div class="list">
+            <table class="table">
+                <thead>
+                    <tr id ="tablehead">
+                        <th>User Id</th>
+                        <th>Username</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Contact no</th>
+                        <th>Address</th>
+                        <th>Pincode</th>
+                       
+                        
+                    </tr>
+                </thead>
+                <tbody>
+    
+                    <tr *ngFor="let u of users |filter:searchText">
+                        <td>{{u.userid}}</td>
+                        <td>{{u.username}}</td>
+                        <td>{{u.name}}</td>
+                        <td>{{u.useremail}}</td>
+                        <td>{{u.contactno}}</td>
+                        <td>{{u.address}}</td>
+                        <td>{{u.pincode}}</td>
+                        
+                       
+                    </tr>     
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+</div>
+

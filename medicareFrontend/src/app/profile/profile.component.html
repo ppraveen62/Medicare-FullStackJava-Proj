@@ -1,0 +1,77 @@
+<div class="mainBox1">
+
+    <div class="header" >
+        <div class="head1">
+            &#9410; Medicare
+        </div>
+        <div class="head2">
+            <div class="profileicon">
+              <a  class="bi bi-house-door-fill" routerLink="/userHome"  id="profile"> Home</a>
+          </div>
+
+            <div class="profileicon">
+                <a class="bi bi-person-fill" id="profile"> {{userName}}</a>
+                <div class="dropdown-options">
+                    <a *ngIf="check" routerLink="/userProfile">Profile</a>
+                    <a *ngIf="check" routerLink="/orders">Orders</a>
+                    <a *ngIf="check" href="#">Logout</a>
+                    <a *ngIf="!check" href="#">Signin</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+<div class="mainBox">
+    
+
+        <div class="content">
+            <div *ngFor="let u of users">
+                <div *ngIf="u.username==userName">
+
+                    <div class="data">
+                        <label>Username</label>
+                        <p>{{u.username}} </p>
+                    </div>
+                    <div class="data">
+                        <label>Password</label>
+                        <p>{{u.password}}</p>
+                    </div>
+                    <div class="data">
+                        <label>Name</label>
+                        <p>{{u.name}}</p>
+                    </div>
+                    <div class="data">
+                        <label>User Email</label>
+                        <p>{{u.useremail}}</p>
+                    </div>
+                    <div class="data">
+                        <label>Contact no</label>
+                        <p>{{u.contactno}}</p>
+                    </div>
+                    <div class="data">
+                        <label>Address</label>
+                        <p>{{u.address}}</p>
+                    </div>
+                    <div class="data">
+                        <label>Pincode</label>
+                        <p>{{u.pincode}}</p>
+                    </div>
+                    <div class="btn">
+                        <button class="btn btn-primary" type="button" routerLink="/updateUser/{{u.userid}}">Update
+                            Profile</button>
+                    </div>
+
+                    
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+    </div>

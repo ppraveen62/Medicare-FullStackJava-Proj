@@ -1,0 +1,83 @@
+.mainbox{
+   padding: 30px;
+}
+
+.heading{
+    font-size: 2rem;
+    font-weight:  bolder;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:whitesmoke;
+    padding-left:50px;
+    float: left;
+    width:100%;
+    justify-content: left;
+    padding-bottom: 50px;
+}
+
+.header{
+    text-align: center;
+}
+.paybox{
+    background-color: whitesmoke;
+    padding: 20px;
+    width:40%;
+    display: grid;
+    border-radius: 5px;
+    float:left;
+    margin:10%
+    
+}
+
+.head{
+    display:grid;
+    padding : 10px;
+}
+
+.head2{
+    display:flex;
+    padding-bottom: 20px;
+    justify-content: space-between;
+}
+
+.btn{
+    background-color: #5470d0;
+    border:none;
+    border-radius: 5px;
+    color: whitesmoke;
+}
+
+input{
+    text-align: center;
+    background-color:#37373c;
+    color: white;
+}
+
+
+.summary{
+    background-color: whitesmoke;
+    padding: 30px;
+    border-radius:5px ;
+}
+
+.sumbox2{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.label1{
+    font-weight: 400;
+    padding-right: 100px
+}
+
+.content{
+    display: flext;
+}
+
+
+.box2{
+    float: left;
+    width:40%;
+    margin-top: 10%;
+}

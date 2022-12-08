@@ -1,0 +1,69 @@
+<div class="mainBox">
+    <div class="heading">
+        &#9410; Medicare
+    </div>
+
+    <div class="col-md-5 offset-3">
+        <h3>Add Product</h3>
+        <form [formGroup]="addproductForm" (ngSubmit)="addProduct()">
+            <div class="form-group">
+                <label for="productId">Product Id:</label>
+                <input type="number" [(ngModel)]="product.productId" formControlName="productId" class="form-control"
+                    id="productId" name="productId" required>
+                <span class="error" *ngIf="submitted && addproductform['productId'].errors">field required</span>
+            </div>
+            <div class="form-group">
+                <label for="productCategory">Product Category:</label>
+                <select  [(ngModel)]="product.productCategory" formControlName="productCategory" class="form-control" id="productCategory" name="productCategory" required>
+                    <option value="medicine" selected>Medicine</option>
+                    <option value="babycare">Baby Care</option>
+                    <option value="personalcare">Personal Care</option>
+                    <option value="vitamins" >Vitamins and Supllements</option>
+                    <option value="health" >Health Acessories</option>
+                </select>
+                <span class="error" *ngIf="submitted && addproductform['productCategory'].errors">field required</span>
+            </div>
+            <div class="form-group">
+                <label for="productName">Product Name:</label>
+                <input type="text" [(ngModel)]="product.productName" formControlName="productName" class="form-control"
+                    id="productName" name="productName" required>
+                <span class="error" *ngIf="submitted && addproductform['productName'].errors">field required</span>
+            </div>
+            <div class="form-group">
+                <label for="productPrice">Product Price:</label>
+                <input type="text" [(ngModel)]="product.productPrice" formControlName="productPrice"
+                    class="form-control" id="productPrice" name="productPrice" required>
+                <span class="error" *ngIf="submitted && addproductform['productPrice'].errors">field required</span>
+            </div>
+            <div class="form-group">
+                <label for="productCompany">Product Company:</label>
+                <input type="text" [(ngModel)]="product.productCompany" formControlName="productCompany"
+                    class="form-control" id="productCompany" name="productCompany" required>
+                <span class="error" *ngIf="submitted && addproductform['productCompany'].errors">field required</span>
+            </div>
+            <div class="form-group">
+                <label for="productManfacturerDescription">Product Description:</label>
+                <input type="text" [(ngModel)]="product.productManfacturerDescription"
+                    formControlName="productManfacturerDescription" class="form-control"
+                    id="productManfacturerDescription" name="productManfacturerDescription" required>
+                <span class="error" *ngIf="submitted && addproductform['productManfacturerDescription'].errors">field
+                    required</span>
+            </div>
+            <div class="form-group">
+                <label for="productManfacturer">Product Manfacturer:</label>
+                <input type="text" [(ngModel)]="product.productManfacturer" formControlName="productManfacturer"
+                    class="form-control" id="productManfacturer" name="productManfacturer" required>
+                <span class="error" *ngIf="submitted && addproductform['productManfacturer'].errors">field
+                    required</span>
+            </div>
+            <div class="form-group">
+                <label for="productImageUrl">Product ImageUrl:</label>
+                <input type="text" [(ngModel)]="product.productImageUrl" formControlName="productImageUrl"
+                    class="form-control" id="productImageUrl" name="productImageUrl" required>
+                <span class="error" *ngIf="submitted && addproductform['productImageUrl'].errors">field required</span>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Product</button>
+        </form>
+
+    </div>
+</div>

@@ -1,0 +1,187 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+
+
+.mainBox{
+}
+
+.head{
+ 
+}
+
+.heading{
+    font-weight:  bolder;
+    padding-left: 70px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:whitesmoke;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    
+}
+
+.nav{
+    font-weight: normal;
+    padding-right: 20px;
+    background-color:whitesmoke;
+    display: flex;
+}
+.bar{
+  background-color:darkgrey;
+  padding: 2px;
+}
+
+.bar2{
+  background-color:white;
+  padding: 1px;
+}
+
+.logdiv{
+  justify-content: right;
+}
+
+.log{
+
+    color:#1e2744;
+    background-color:white; ;
+    border-radius: 5px;
+    margin-top:5px;
+    margin-bottom:5px;
+    
+}
+
+.log:hover{
+    color: white;
+   background-color: #1e2744;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.table {
+    
+    text-align: center;
+    background-color: snow;
+    border-collapse: unset;
+    border-radius: 5px;
+}
+
+.list {
+    padding: 20px;
+    margin: auto;
+}
+
+#tablehead{
+    background-color: #3e3d48;
+    color: whitesmoke;
+  
+}
+
+.click{
+    background-color:#1e2744;
+    border-radius: 10px ;
+    color: whitesmoke;
+    font-weight:normal;
+    font-size: 20px;
+    padding:5px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+.click:hover{
+  background-color: midnightblue;
+}
+
+  .addbtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+  }
+
+  .search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    font-size: larger;
+    color:rgb(15, 32, 39);
+    font-weight: bolder;
+
+  }
+
+  .searchbar{
+    text-align: center;
+    margin-left: 5px;
+    border-radius: 5px;
+  }
+  
+  .deletebtn{
+    background-color: #1e2744;
+    border-radius: 5px;
+    color: white;
+    font-size: larger;
+    font-weight: bolder;
+    padding: 5px;
+  }
+  .editbtn{
+    background-color: #1e2744;
+    border-radius: 5px;
+    color: white;
+    font-size: larger;
+    font-weight: bolder;
+    padding: 5px;
+  }
+
+  .enablebtn{
+    background-color: darkgreen;
+    border-radius: 5px;
+    color: white;
+    font-size: smaller;
+    font-weight: normal;
+    padding: 5px;
+
+  }
+
+  .disablebtn{
+    background-color: darkred;
+    border-radius: 5px;
+    color: white;
+    font-size: smaller;
+    font-weight: normal;
+    padding: 5px;
+
+  }
+
+  tbody{
+    background-color:whitesmoke;
+    border-radius: 20px;
+    justify-content: center;
+    text-align: center;
+
+  }
+
+  th{
+    border-radius: 5px;
+  }
+
+  .nav-link{
+    font-weight:bold;
+    cursor: pointer;
+  }
+
+  .nav-link:hover{
+    color: #1e2744;
+  }
+
+  .nav-link.active{
+    color: black;
+  }
+  
+  input:focus, textarea:focus, select:focus{
+    outline: none;
+}
+  
+
+  img{
+    width:150px;
+    height: 180px;
+  }

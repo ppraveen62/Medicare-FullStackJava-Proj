@@ -1,0 +1,90 @@
+<div class="mainBox1">
+
+    <div class="header" >
+        <div class="head1">
+            &#9410; Medicare
+        </div>
+        <div class="head2">
+            <div class="profileicon">
+              <a  class="bi bi-house-door-fill" routerLink="/userHome"  id="profile"> Home</a>
+          </div>
+
+            <div class="profileicon">
+                <a class="bi bi-person-fill" id="profile"> {{userName}}</a>
+                <div class="dropdown-options">
+                    <a *ngIf="check" routerLink="/userProfile">Profile</a>
+                    <a *ngIf="check" routerLink="/orders">Orders</a>
+                    <a *ngIf="check" href="#">Logout</a>
+                    <a *ngIf="!check" href="#">Signin</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<div class="mainBox">
+    <h4>Your Cart Items </h4>
+
+    <div *ngIf="totalmrp1==0"><h5>Hello! Your cart is empty.</h5></div>
+    <div class="content">
+        
+        <div class="box1">
+            
+            <div *ngFor="let c of carts">
+                <div *ngIf="c.username==userName && c.payment=='notpaid' " >
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="cardbody">
+                                <img src="{{c.productimageurl}}" class="image" alt="image">
+                                <div>
+                                    <h6 class="card-title">{{c.productname}}</h6>
+                                    <p class="card-text">Category: {{c.productcategory}}</p>
+                                    <p class="card-text">₹ {{c.productprice}}</p>
+                                    <div class="qty">
+                                        <label for="productCategory">Qty&nbsp;</label>
+                                        <select id="qty" name="qty">
+                                            <option value=1 selected>1</option>
+                                            <option value=2>2</option>
+                                            <option value=3>3</option>
+                                            <option value=4>4</option>
+                                            <option value=5>5</option>
+                                        </select>
+                                    </div>
+    
+                                </div>
+                            </div>
+                            <div class="cbtn">
+                                <button type="button" class="removebtn" (click)="remove(c.cartid);calculate()">Remove</button>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="box2">
+            <div class="summary">
+                <h6>Payment Details</h6>
+                <div class="sumbox2">
+                    <label class="label1">Total MRP</label><p>Rs.{{totalmrp}}</p>
+                </div>
+                <div class="sumbox2">
+                    <label class="label1">Tax</label><p>+ Rs.{{discount}}</p>
+                </div>
+                <div class="sumbox2">
+                    <label class="label1">Discount</label><p>- Rs.{{discount}}</p>
+                </div>
+                <div class="sumbox2">
+                    <label class="label1" id="pricetag">Total Amount</label><p>Rs.{{totalamt}}</p>
+                </div>
+                <div  class="btn">
+                    <button class="buybtn" type="button" routerLink="/paymentGateway">Buy</button>
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+</div>

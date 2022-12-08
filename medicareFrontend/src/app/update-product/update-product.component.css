@@ -1,0 +1,30 @@
+.mainBox{
+    padding:20px;
+    background: linear-gradient(to right, rgb(0, 198, 255), rgb(0, 114, 255));
+    
+ 
+}
+
+
+.heading{
+    font-size: 2rem;
+    font-weight:  bolder;
+    padding-bottom: 80px;
+    padding-left: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:whitesmoke
+}
+
+label{
+    color: white;
+}
+
+h3{
+    color: whitesmoke;
+    padding-bottom: 20px;
+}
+
+.error{
+    color:orangered;
+    padding-left: 30px;
+}
