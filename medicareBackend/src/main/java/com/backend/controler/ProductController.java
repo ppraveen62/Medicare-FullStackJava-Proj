@@ -50,10 +50,7 @@ public class ProductController {
 		return pdao.getproduct();	
 	}
 	
-	@GetMapping("/category/{name}")
-	public List<Product> productByCategory(@PathVariable String name){
-		return pdao.getproductbycategory(name);	
-	}
+
 
 	@DeleteMapping("{id}")
 	public ResponseEntity<Object> deleteProductById(@PathVariable Long id){

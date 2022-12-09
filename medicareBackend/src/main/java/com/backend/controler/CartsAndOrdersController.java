@@ -44,10 +44,6 @@ public class CartsAndOrdersController {
 		return cdao.getcart();	
 	}
 	
-	@GetMapping("/get/{username}")
-	public List<CartsAndOrders> getUserCart(@PathVariable String username){
-		return cdao.getcartbyusername(username);	
-	}
 	
 	
 	@DeleteMapping("{id}")
@@ -67,10 +63,14 @@ public class CartsAndOrdersController {
 			return new ResponseEntity<>("Order updated",HttpStatus.NOT_FOUND);
 	}
 	
-	@GetMapping("order/{name}")
-	public List<CartsAndOrders> getUserOrder(@PathVariable String username){
-		return cdao.getUserOrder(username);
-		
+	
+	@PutMapping("/updateqty/{id}")
+	public ResponseEntity<Object> updateQtyCartOrder(@RequestBody CartsAndOrders c,@PathVariable long id){
+		CartsAndOrders resp=cdao.updateCartqty(c, id);
+		if(resp!=null)
+			return new ResponseEntity<>(resp,HttpStatus.OK);
+		else
+			return new ResponseEntity<>("Order updated",HttpStatus.NOT_FOUND);
 	}
 	
 

@@ -20,6 +20,9 @@ export class CartpageComponent implements OnInit {
 
   userName:string=UserData.username;
   check:boolean=true;
+  
+
+  
  
   ngOnInit(): void {
     
@@ -29,6 +32,7 @@ export class CartpageComponent implements OnInit {
       this.userName="guest";
       this.check=false;
     }
+   
   }
  
 
@@ -42,6 +46,7 @@ export class CartpageComponent implements OnInit {
  
 
   calculate(){
+    UserData.totalamt=0;
     this.totalmrp1=0;
     for(let i=0; i<(this.carts.length);i++){
       if(this.carts[i].username==this.userName && this.carts[i].payment=='notpaid'){
@@ -60,10 +65,29 @@ export class CartpageComponent implements OnInit {
 
   remove(id:number){
     this.carts=this.carts.filter(c=>c.cartid!==id)
-    this.cservice.delete(id).subscribe(data=>{console.log(data);})
+    this.cservice.delete(id).subscribe(data=>{})
   }
 
- 
+
+  qty!:number;
+  totalPrice!:number
+  
+
+ changeqty(e:any,id:number){
+    this.cart.qty=e.target.value;
+
+    for(let i=0; i<(this.carts.length);i++){
+      if(this.carts[i].cartid==id){
+        let x=Number(this.carts[i].productprice)
+        let y=Number(this.cart.qty)
+        this.totalPrice=(x*y)
+      } 
+    }
+    this.cart.totalprice=this.totalPrice
+    
+    this.cservice.updateqty(id,this.cart).subscribe(data=>{this.ngOnInit()});
+    
+ }
 
 
 }

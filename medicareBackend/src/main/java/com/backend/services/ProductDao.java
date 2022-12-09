@@ -27,9 +27,7 @@ public class ProductDao {
 	}
 	
 	
-	public List<Product> getproductbycategory(String name) {
-		return productrepo.findproductbycategory(name);
-	}
+
 	
 	public boolean delete(long id) {
 		if (productrepo.findById(id).isPresent()) {

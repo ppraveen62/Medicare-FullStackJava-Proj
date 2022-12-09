@@ -26,11 +26,7 @@ public class CartsAndOrdersDao {
 	public List<CartsAndOrders> getcart() {
 		return cartrepo.findAll();
 	}
-	
-	public List<CartsAndOrders> getcartbyusername(String name) {
-		return  cartrepo.findcartbyusername(name);
-	}
-	
+
 
 	
 	public boolean deleteById(long id) {
@@ -58,10 +54,17 @@ public class CartsAndOrdersDao {
 			return null;
 	}
 	
-	
-	public List<CartsAndOrders> getUserOrder(String username) {
-		return  cartrepo.findcartbypayment(username);
+	public CartsAndOrders updateCartqty(CartsAndOrders newData, Long id) {
+		if (cartrepo.findById(id).isPresent()) {
+			CartsAndOrders oldData = cartrepo.findById(id).get();
+			oldData.setQty(newData.getQty());
+			oldData.setTotalprice(newData.getTotalprice());
+			return cartrepo.save(oldData);
+		} else
+			return null;
 	}
+	
+	
 	
 	
 }

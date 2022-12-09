@@ -26,6 +26,9 @@ export class CartService {
   update(id:number,cart:Cart){
     return this.HttpClient.put(this.baseUrl+"/update/"+id,cart);
   }
+  updateqty(id:number,cart:Cart){
+    return this.HttpClient.put(this.baseUrl+"/updateqty/"+id,cart);
+  }
 
 
 }

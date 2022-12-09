@@ -9,8 +9,6 @@ import com.backend.entity.Product;
 
 public interface ProductRepo extends JpaRepository<Product,Long> {
 	
-	@Query("select Product from Product Product where productCategory=?1")
-	public List<Product> findproductbycategory(String name);
-	
+
 	
 }

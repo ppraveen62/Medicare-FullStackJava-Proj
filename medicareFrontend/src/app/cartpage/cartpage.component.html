@@ -42,9 +42,9 @@
                                     <p class="card-text">Category: {{c.productcategory}}</p>
                                     <p class="card-text">₹ {{c.productprice}}</p>
                                     <div class="qty">
-                                        <label for="productCategory">Qty&nbsp;</label>
-                                        <select id="qty" name="qty">
-                                            <option value=1 selected>1</option>
+                                        <label for="productCategory" >Qty&nbsp;</label>
+                                        <select id="qty" (change)="changeqty($event,c.cartid)" name="qty" [value]="c.qty">
+                                            <option value=1 >1</option>
                                             <option value=2>2</option>
                                             <option value=3>3</option>
                                             <option value=4>4</option>
